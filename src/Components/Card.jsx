@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { addCartProductContext } from '../Context/CartContext'
 import { addWishlistProductContext } from '../Context/WishlistContext'
-
+import { ToastContainer,toast } from 'react-toastify'
 
 
 function Card(prop) {
@@ -13,6 +13,7 @@ function Card(prop) {
     const newAddCartProjectState=[...addCartProjectState]
     newAddCartProjectState.push(product)
     setAddCartProjectState(newAddCartProjectState)
+    toast.warning("product added to cart")
     }
 
 
@@ -22,7 +23,7 @@ function Card(prop) {
         const newAddWishlistProjectState=[...addWishlistProjectState]
         newAddWishlistProjectState.push(product)
         setAddWishlistProjectState(newAddWishlistProjectState)
-        
+        toast.warning("product added to wishlist")
     }
 
   return (
@@ -60,6 +61,8 @@ function Card(prop) {
   }
 
 </div>
+
+
 
 </div>
   )
